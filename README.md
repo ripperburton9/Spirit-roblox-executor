@@ -1,19 +1,14 @@
-# Xeno Owned by: https://discord.gg/exploitnews
-# Zenora Owned by: https://discord.gg/exploitnews
-# API Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoDLL
-# UI Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoUI
-
 > [!WARNING]
-> You are most likely going to be banned since this is detected by Byfron. Use an alt account while running Xeno. Use the repository to understand what's happening and how it works.
+> You are most likely going to be banned since this is detected by Byfron. Use an alt account while running Spirit. Use the repository to understand what's happening and how it works.
 > I am not liable for any bans
 
-# Xeno
+# Spirit
 An executor made for the web version of Roblox.
 
 It uses the common method of writing unsigned bytecode into a Roblox core module script to manage execution, also more stable and flexible than most executors that has used this exact method.
 
 ## Note
-If you're going to use my source and "skid" off of it atleast use the license and give credits. Don't be like the others who used my entire source code and claimed it as their own without mentioning anything about Xeno nor the publisher + distributing & selling to others.
+If you're going to use my source and "skid" off of it atleast use the license and give credits. Don't be like the others who used my entire source code and claimed it as their own without mentioning anything about Spirit nor the publisher + distributing & selling to others.
 
 ## Features
 - Fast execution
@@ -26,37 +21,37 @@ If you're going to use my source and "skid" off of it atleast use the license an
 I have only used this project to learn C++ and a bit of C#.
 
 Do not expect the best code and memory management.
-You will see really bad code and design on the XenoUI C# WPF project since it was only made as a **prototype**.
+You will see really bad code and design on the SpiritUI C# WPF project since it was only made as a **prototype**.
 
-This executor has many vulnerabilities because only I have used **Xeno** and did not make a public release.
+This executor has many vulnerabilities because only I have used **Spirit** and did not make a public release.
 
 Custom functions examples:
 ```lua
 -- get real address
-local address = Xeno.get_real_address(game:GetService("ScriptContext"))
+local address = Spirit.get_real_address(game:GetService("ScriptContext"))
 print("Script context address:", string.format("0x%x", address))
 
 -- spoof instance
-Xeno.spoof_instance(game:GetService("CoreGui"), 0) -- set the address of coregui to 0
-Xeno.spoof_instance(game.Players.LocalPlayer, Instance.new("Part")) -- set the localplayers address to a part
+Spirit.spoof_instance(game:GetService("CoreGui"), 0) -- set the address of coregui to 0
+Spirit.spoof_instance(game.Players.LocalPlayer, Instance.new("Part")) -- set the localplayers address to a part
 
 -- http spy
-Xeno.HttpSpy() -- set http spy to true
-Xeno.HttpSpy(false) -- set httpspy to false
+Spirit.HttpSpy() -- set http spy to true
+Spirit.HttpSpy(false) -- set httpspy to false
 
 -- globals (shared across all clients, saved inside the executor)
 -- similar to Instance:GetAttribute() but supports tables
 -- global name, value
-Xeno.SetGlobal("__test", { -- can only set table, number, and string as a global
+Spirit.SetGlobal("__test", { -- can only set table, number, and string as a global
 	["test_text"] = "hello, world!"
 })
 
-local t = Xeno.GetGlobal("__test") -- the table we just set
+local t = Spirit.GetGlobal("__test") -- the table we just set
 print(t.test_text) -- hello, world!
 
 -- other
-print(Xeno.PID) -- current roblox process id
-print(Xeno.GUID) -- the guid it is using to communicate with the external
+print(Spirit.PID) -- current roblox process id
+print(Spirit.GUID) -- the guid it is using to communicate with the external
 ```
 
 The current method of adding **HttpGet** to "game" interferes with some scripts like [**dex**](https://raw.githubusercontent.com/infyiff/backup/main/dex.lua). To execute dex run this script:
@@ -64,7 +59,7 @@ The current method of adding **HttpGet** to "game" interferes with some scripts 
 getgenv().game = workspace.Parent
 ```
 This will remove **HttpGet** from game!
-You can use the modified version of dex made for Xeno inside the released files
+You can use the modified version of dex made for Spirit inside the released files
 
 ### Preview
 <p>This is the UI of the version 1.0.1:</p>
