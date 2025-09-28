@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Xeno.rc
+// Used by Spirit.rc
 
 // Next default values for new objects
 // 

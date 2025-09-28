@@ -26,17 +26,17 @@ static void newClient(DWORD pid) {
 static void init() {
     DWORD CurrentPID = GetCurrentProcessId();
 
-    std::vector<DWORD> xenoPIDs = GetProcessIDsByName(L"Xeno.exe");
-    std::vector<DWORD> xenoUIPIDs = GetProcessIDsByName(L"XenoUI.exe");
+    std::vector<DWORD> SpiritPIDs = GetProcessIDsByName(L"Spirit.exe");
+    std::vector<DWORD> SpiritUIPIDs = GetProcessIDsByName(L"SpiritUI.exe");
 
-    xenoPIDs.insert(xenoPIDs.end(), xenoUIPIDs.begin(), xenoUIPIDs.end());
+    SpiritPIDs.insert(SpiritPIDs.end(), SpiritUIPIDs.begin(), SpiritUIPIDs.end());
 
-    for (const DWORD& pid : xenoPIDs) { // Terminate existing Xeno processes
+    for (const DWORD& pid : SpiritPIDs) { // Terminate existing Spirit processes
         if (pid == CurrentPID)
             continue;
-        HANDLE hXeno = OpenProcess(PROCESS_TERMINATE, FALSE, pid);
-        if (hXeno)
-            TerminateProcess(hXeno, 0);
+        HANDLE hSpirit = OpenProcess(PROCESS_TERMINATE, FALSE, pid);
+        if (hSpirit)
+            TerminateProcess(hSpirit, 0);
     }
 
     while (true) {

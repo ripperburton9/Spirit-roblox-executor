@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace XenoUI
+namespace SpiritUI
 {
 	public partial class ScriptsWindow : Window
 	{

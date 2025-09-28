@@ -41,7 +41,7 @@ namespace offsets {
 }
 
 
-const std::string_view Xeno_Version = "1.0.7";
+const std::string_view Spirit_Version = "1.0.7";
 
 template<typename T>
 T read_memory(std::uintptr_t address, HANDLE handle);

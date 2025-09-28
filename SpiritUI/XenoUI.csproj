@@ -12,20 +12,20 @@
     <ApplicationIcon>Resources\Images\icon.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
     <UseWPF>True</UseWPF>
-    <StartupObject>XenoUI.App</StartupObject>
+    <StartupObject>SpiritUI.App</StartupObject>
     <PlatformTarget>x64</PlatformTarget>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-    <Title>Xeno</Title>
+    <Title>Spirit</Title>
     <Copyright>Rizve</Copyright>
-    <Description>Xeno - Executor UI
-https://github.com/Riz-ve/Xeno</Description>
-    <RepositoryUrl>https://github.com/Riz-ve/Xeno/tree/main/XenoUI</RepositoryUrl>
+    <Description>Spirit - Executor UI
+https://github.com/Riz-ve/Spirit</Description>
+    <RepositoryUrl>https://github.com/Riz-ve/Spirit/tree/main/SpiritUI</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Authors>$(AssemblyName)</Authors>
     <PackageId>$(AssemblyName)</PackageId>
-    <Product>Xeno</Product>
+    <Product>Spirit</Product>
     <FileVersion>1.0.5</FileVersion>
     <AssemblyVersion>1.0.5</AssemblyVersion>
     <Version>1.0.5</Version>

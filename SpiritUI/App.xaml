@@ -1,7 +1,7 @@
-﻿<Application x:Class="XenoUI.App"
+﻿<Application x:Class="SpiritUI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:XenoUI"
+             xmlns:local="clr-namespace:SpiritUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

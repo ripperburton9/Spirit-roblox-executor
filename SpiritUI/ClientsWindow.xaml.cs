@@ -6,11 +6,11 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Net.Http;
 
-namespace XenoUI
+namespace SpiritUI
 {
 	public partial class ClientsWindow : Window
 	{
-		public string XenoVersion = "1.0.7";
+		public string SpiritVersion = "1.0.7";
 
 		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct ClientInfo
@@ -20,16 +20,16 @@ namespace XenoUI
 			public int id;
 		}
 
-		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("SpiritDLL.dll", CallingConvention = CallingConvention.Cdecl)]
 		private static extern void Initialize();
 
-		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("SpiritDLL.dll", CallingConvention = CallingConvention.Cdecl)]
 		private static extern IntPtr GetClients();
 
-		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+		[DllImport("SpiritDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
 		private static extern void Execute(byte[] scriptSource, string[] clientUsers, int numUsers);
 
-		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+		[DllImport("SpiritDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
 		private static extern IntPtr Compilable(byte[] scriptSource);
 
 		private readonly DispatcherTimer _timer;
@@ -54,13 +54,13 @@ namespace XenoUI
 			try
 			{
 				using var client = new HttpClient();
-				string latestVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/LatestVersion");
-				if (latestVersion != XenoVersion)
+				string latestVersion = await client.GetStringAsync("https://rizve.us.to/Spirit/LatestVersion");
+				if (latestVersion != SpiritVersion)
 				{
-					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Zenora ({latestVersion}) here: https://discord.gg/exploitnews", "Outdated Zenora version", MessageBoxButton.OK, MessageBoxImage.Warning);
+					MessageBox.Show($"The current version {SpiritVersion} is outdated.\n\nPlease download the latest version of Zenora ({latestVersion}) here: https://discord.gg/exploitnews", "Outdated Zenora version", MessageBoxButton.OK, MessageBoxImage.Warning);
 					Application.Current.Shutdown();
 				}
-				SupportedVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/SupportedVersion");
+				SupportedVersion = await client.GetStringAsync("https://rizve.us.to/Spirit/SupportedVersion");
 			}
 			catch (HttpRequestException e)
 			{

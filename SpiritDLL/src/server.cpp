@@ -46,7 +46,7 @@ static void activate_console() {
 	console_active = true;
 
 	AllocConsole();
-	SetConsoleTitleA("Xeno");
+	SetConsoleTitleA("Spirit");
 	FILE* pCout;
 	freopen_s(&pCout, "CONOUT$", "w", stdout);
 	freopen_s(&pCout, "CONIN$", "r", stdin);
@@ -500,8 +500,8 @@ static void serve(Response& res, const json& body) {
 
 	if (cType == "ax") { // get autoexec contents
 		std::string content;
-		std::filesystem::path xenoDir = std::filesystem::current_path().parent_path();
-		std::filesystem::path autoexecDir = xenoDir / "autoexec";
+		std::filesystem::path SpiritDir = std::filesystem::current_path().parent_path();
+		std::filesystem::path autoexecDir = SpiritDir / "autoexec";
 		if (!std::filesystem::exists(autoexecDir)) {
 			std::filesystem::create_directory(autoexecDir);
 		}

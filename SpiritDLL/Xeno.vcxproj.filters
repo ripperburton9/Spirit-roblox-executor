@@ -125,7 +125,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Xeno.cpp">
+    <ClCompile Include="src\Spirit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\utils\ntdll.cpp">
@@ -190,7 +190,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Xeno.rc">
+    <ResourceCompile Include="Spirit.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
